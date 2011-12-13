@@ -81,6 +81,10 @@ module Johnnie
           opts.on("-d", "--dry-run", "Dry run, do not modify anything") do
             @@options[:dry_run] = true
           end
+
+          opts.on("-r", "--root ROOT", "Specify the root directory (default: @@root)") do |r|
+            root(r)
+          end
         end.parse! ARGV
       end
 
